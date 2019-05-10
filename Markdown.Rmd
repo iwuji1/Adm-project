@@ -1,0 +1,11 @@
+---
+title: "Final Project"
+output: html_document
+---
+
+Educational Data Set
+```{r}
+ed_data <- read.csv2("~/Desktop/Adm-project/Education Data Set/API_SE.ENR.PRSC.FM.ZS_DS2_en_csv_v2_10580735.csv")
+View(ed_data)
+names(ed_data)
+```
