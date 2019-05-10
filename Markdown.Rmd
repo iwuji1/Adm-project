@@ -3,9 +3,22 @@ title: "Final Project"
 output: html_document
 ---
 
-Educational Data Set
+Educational Total Data Set
 ```{r}
-ed_data <- read.csv2("~/Desktop/Adm-project/Education Data Set/API_SE.ENR.PRSC.FM.ZS_DS2_en_csv_v2_10580735.csv")
+ed_data <- read.csv2("~/Desktop/Adm-project/Education Total/API_SE.PRM.CMPT.ZS_DS2_en_csv_v2_10579238.csv")
 View(ed_data)
 names(ed_data)
+```
+
+GDP
+```{r}
+gdp_data <- read.csv2("~/Desktop/Adm-project/GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv")
+View(gdp_data)
+```
+
+
+Unemployment
+```{r}
+un_data <- read.csv2("~/Desktop/Adm-project/Unemployment Data Set/API_SL.UEM.TOTL.ZS_DS2_en_csv_v2_10576601.csv")
+View(un_data)
 ```
