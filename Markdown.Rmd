@@ -6,22 +6,18 @@ output: html_document
 library(tidyr)
 library(dplyr)
 library(tidyverse)
-#library(ggplot2)
+library(ggplot2)
 ```
 
 Educational Data (Female)
 ```{r}
 fem.df<- as.data.frame(read.csv(file="~/Desktop/Adm-project/Education Female/API_SE.PRM.CMPT.FE.ZS_DS2_en_csv_v2_10580877.csv"))
-```
 
-
-```{r}
 fem.df<- subset(fem.df,select=-c(3:23))
 fem.df <- fem.df[complete.cases(fem.df[,c(3:29)]),]
 View(fem.df)
 #glimpse(fem_df)
 ```
-
 
 Educational Data (Male)
 ```{r}
