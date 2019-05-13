@@ -18,6 +18,12 @@ ml.df <- data.frame(ml_data)
 names(ml.df)
 ```
 
+Educational DATA (Total)
+```{r}
+
+
+```
+
 
 GDP
 ```{r}
