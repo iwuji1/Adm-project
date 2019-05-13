@@ -2,24 +2,69 @@
 title: "Final Project"
 output: html_document
 ---
-
-Educational Total Data Set
 ```{r}
-ed_data <- read.csv2("~/Desktop/Adm-project/Education Total/API_SE.PRM.CMPT.ZS_DS2_en_csv_v2_10579238.csv")
-View(ed_data)
-names(ed_data)
+library(tidyr)
+library(dplyr)
+library(tidyverse)
+#library(ggplot2)
+```
+
+Educational Data (Female)
+```{r}
+fem.df<- as.data.frame(read.csv(file="~/Desktop/Adm-project/Education Female/API_SE.PRM.CMPT.FE.ZS_DS2_en_csv_v2_10580877.csv"))
+```
+
+
+```{r}
+fem.df<- subset(fem.df,select=-c(3:23))
+fem.df <- fem.df[complete.cases(fem.df[,c(3:29)]),]
+View(fem.df)
+#glimpse(fem_df)
+```
+
+
+Educational Data (Male)
+```{r}
+ml_data <- read.csv(file="~/Desktop/Adm-project/Education Male/API_SE.PRM.CMPT.MA.ZS_DS2_en_csv_v2_10580880.csv")
+#View(ml_data)
+ml.df <- data.frame(ml_data)
+ml.df<- subset(ml.df,select=-c(3:23))
+ml.df <- ml.df[complete.cases(ml.df[,c(3:29)]),]
+View(ml.df)
+```
+
+
+Educational DATA (Total)
+```{r}
+ed_tot <- read.csv("~/Desktop/Adm-project/Education Total/API_SE.PRM.CMPT.ZS_DS2_en_csv_v2_10579238.csv")
+ed.df <- as.data.frame(ed_tot)
+ed.df<- subset(ed.df,select=-c(3:23))
+ed.df <- ed.df[complete.cases(ed.df[c(3:29)]),]
+View(ed.df)
+```
+
+
+The Gender Parity Index is a socioeconomic index usually designed to measure the relative access to education of males and females. This index is released by UNESCO. In its simplest form, it is calculated as the quotient of the number of females by the number of males enrolled in a given stage of education
+
+```{r}
+gpi.df <- as.data.frame(read.csv("~/Desktop/Adm-project/GPI Ed-Primary:Secondary/API_SE.ENR.PRSC.FM.ZS_DS2_en_excel_v2_10576950.csv"))
+gpi.df<- gpi.df[complete.cases(gpi.df[c(3:29)]),]
+View(gpi.df)
 ```
 
 GDP
 ```{r}
 gdp_data <- read.csv2("GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv", header = TRUE, sep = ",")
+
 View(gdp_data)
 ```
 
 
 Unemployment
 ```{r}
-un_data <- read.csv2("~/Desktop/Adm-project/Unemployment Data Set/API_SL.UEM.TOTL.ZS_DS2_en_csv_v2_10576601.csv")
+un_data <- as.data.frame(read.csv("./Unemployment Data Set/Unemployment_percent_of_total_labor_force.csv"))
+un_female_data <- read.csv("./Unemployment female/Unemployment_female.csv")
+un_male_data <- read.csv("./Unemployment male/Unemployment_male.csv")
 View(un_data)
 ```
 
