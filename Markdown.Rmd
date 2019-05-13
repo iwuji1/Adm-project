@@ -39,17 +39,24 @@ Educational DATA (Total)
 ed_tot <- read.csv("~/Desktop/Adm-project/Education Total/API_SE.PRM.CMPT.ZS_DS2_en_csv_v2_10579238.csv")
 ed.df <- as.data.frame(ed_tot)
 ed.df<- subset(ed.df,select=-c(3:23))
-ed.df <- fem.df[complete.cases(fem.df[c(3:29)]),]
+ed.df <- ed.df[complete.cases(ed.df[c(3:29)]),]
 View(ed.df)
 ```
 
+
+The Gender Parity Index is a socioeconomic index usually designed to measure the relative access to education of males and females. This index is released by UNESCO. In its simplest form, it is calculated as the quotient of the number of females by the number of males enrolled in a given stage of education
+
+```{r}
+gpi.df <- as.data.frame(read.csv("~/Desktop/Adm-project/GPI Ed-Primary:Secondary/API_SE.ENR.PRSC.FM.ZS_DS2_en_excel_v2_10576950.csv"))
+gpi.df<- gpi.df[complete.cases(gpi.df[c(3:29)]),]
+View(gpi.df)
+```
 
 GDP
 ```{r}
 gdp_data <- read.csv("~/Desktop/Adm-project/GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv")
 View(gdp_data)
 ```
-
 
 
 Unemployment
