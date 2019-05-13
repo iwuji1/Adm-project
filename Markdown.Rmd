@@ -12,7 +12,7 @@ names(ed_data)
 
 GDP
 ```{r}
-gdp_data <- read.csv2("~/Desktop/Adm-project/GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv")
+gdp_data <- read.csv2("GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv", header = TRUE, sep = ",")
 View(gdp_data)
 ```
 
@@ -22,3 +22,33 @@ Unemployment
 un_data <- read.csv2("~/Desktop/Adm-project/Unemployment Data Set/API_SL.UEM.TOTL.ZS_DS2_en_csv_v2_10576601.csv")
 View(un_data)
 ```
+
+
+
+```{r}
+head(gdp_data)
+names(gdp_data)[1] <- "Country.Name"
+colnames(gdp_data)
+```
+
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+gdp_data2 <- gdp_data[,-c(5:34)]
+```
+
+```{r}
+clean_gdp <- gdp_data2 %>%
+  filter(X2007 != "")
+```
+
+```{r}
+clean_gdp %>%
+  ggplot(aes(Country.Name, X2017)) + geom_point()
+```
+
+
