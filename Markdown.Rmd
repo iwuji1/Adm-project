@@ -3,16 +3,25 @@ title: "Final Project"
 output: html_document
 ---
 
-Educational Total Data Set
+Educational Data (Female)
 ```{r}
-ed_data <- read.csv2("~/Desktop/Adm-project/Education Total/API_SE.PRM.CMPT.ZS_DS2_en_csv_v2_10579238.csv")
-View(ed_data)
-names(ed_data)
+fem_data <- read.csv(file="~/Desktop/Adm-project/Education Female/API_SE.PRM.CMPT.FE.ZS_DS2_en_csv_v2_10580877.csv")
+View(fem_data)
+fem.df <- data.frame(fem_data)
+names(fem.df)
 ```
+Educational Data (Male)
+```{r}
+ml_data <- read.csv(file="~/Desktop/Adm-project/Education Male/API_SE.PRM.CMPT.MA.ZS_DS2_en_csv_v2_10580880.csv")
+View(ml_data)
+ml.df <- data.frame(ml_data)
+names(ml.df)
+```
+
 
 GDP
 ```{r}
-gdp_data <- read.csv2("~/Desktop/Adm-project/GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv")
+gdp_data <- read.csv("~/Desktop/Adm-project/GDP data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10617557.csv")
 View(gdp_data)
 ```
 
